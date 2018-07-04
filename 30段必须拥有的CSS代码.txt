@@ -1,0 +1,263 @@
+1、清除浮动的方法
+.clearfix:before,.container:after{ content:"";display:table;}
+.clearfix:after{clear:both;}
+/*IE 6/7*/
+.clearfix{zoom:1;}
+
+2、跨浏览器设置透明度
+.transparent{
+	filter:alpha(opacity=50); /*IE*/
+	-khtml-opacity:0.5; /*老版本的Safari*/
+	-moz-opacity:0.5; /*Mozilla,Netscape*/
+	opacity:0.5; /*fx,Safari,Opera*/
+}
+
+3、设置圆角
+#container{
+	-webkit-border-radius:4px 3px 6px 10px; /*Safari 和 Chrome*/
+	-moz-border-radius:4px 3px 6px 10px; /*Firefox*/
+	-o-border-radius:4px 3px 6px 10px; /*Opera*/
+	border-radius:4px 3px 6px 10px; 
+/*位置分别对应：左上角，右上角，右下角，左下角*/
+}
+
+4、适配屏幕
+
+
+5、CSS字体属性简写
+body{
+	font:font-style font-variant font-weight font-size line-height font-family;
+/*font-variant属性为设置或检索对象中的文本是否为小型的大写字母。属性为normal : 正常的字体
+								small-caps : 小型的大写字母字体*/
+}
+
+6、自定义文本选择的高亮效果
+::selection{
+	background:#e2eae2;
+}/*鼠标选中文字是显示的颜色*/
+::-moz-selection{
+	background:#e2eae2;
+}/*Firefox*/
+::webkit-selection{
+	background:#e2eae2;
+}/*Safari 和 Chrome*/
+
+7、锚链节伪类的设置
+a:link{color:blue;} /*未访问的链接*/
+a:visited{color:purple;} /*已访问的链接*/
+a:hover{color:red;} /*鼠标移动到连接上*/
+a:activit{color:yellow;} /*选定的链接*/
+
+8、全屏背景
+html{
+	background:url('images/bg.jpg') no-repeat center center fixed;
+	-webkit-background-size:cover; /*Safari 和 Chrome*/
+	-moz-background-size:cover; /*Firefox*/
+	-o-background-size:cover; /*Opera*/
+	background-size:cover;/*背景尺寸*/
+}
+
+9、垂直居中内容
+.container{
+	min-height:6.5em;
+	display:table-cell;/*浏览器会默认创建一个表格行*/
+	vertacal-align:middle;
+}
+
+10、强制垂直滚动条
+html{
+	height:101%;
+}
+
+11、设置自定义字体
+@font-face{
+	font-family:"MyWebFont';
+	src:url('webfont.eot');/*IE9 Compat Modes*/
+	src:url('webfont.eot?#iefix')format('embedded-opentype'),/*IE6-IE8*/
+		url('webfont.woff')format('woff'),/*Modern Browsers*/
+		url('webfont.ttf')format('ruetype'),/*Safari,Android,iOS*/
+		url('webfont.fvg#svgFontName')format('svg');/*Legacy iOS*/
+}
+body{
+	font-family:'MyWebFont',Arial,sans-serif;
+}
+
+12、自定义段落首字母
+p:first-letter{
+	display:block;
+	margin:5px 0 0 5px;
+	float:left;
+	color:#ff3366;
+	font-size:5.4em;
+	font-family:Georgia,Time New Roman,serif;
+}
+
+13、CSS3盒子模型内部阴影
+#mydiv{
+	-moz-box-shadow:inset 2px 0 4px #000; /*Firefox*/
+	-webkit-box-shadow:inset 2px 0 4px #000; /*Safari 和 Chrome*/
+	box-shadow:inset 2px 0 4px #000;
+/*box-shadow:内置阴影 x偏移量 y偏移量 模糊范围 阴影颜色*/
+}
+
+14、CSS3盒子模型外部阴影
+#mydiv{
+	-moz-box-shadow:0 2px 2px -2px #000; /*Firefox*/
+	-webkit-box-shadow:0 2px 2px -2px #000; /*Safari 和 Chrome*/
+	box-shadow:0 2px 2px -2px #000;
+/*box-shadow:0 x偏移量 y偏移量 模糊范围 阴影颜色*/
+}
+
+15、固定宽度的居中布局
+#page-wrap{
+	width:800px;
+	margin:0 auto;
+}
+
+16、禁用移动Webkit浏览器中的高亮显示
+body{
+	-webkit-touch-callout:none; /*系统默认菜单被禁用*/
+	-webkit-user-select:none;  /*用户不能选中文本，Safari 和 Chrome*/
+	-moz-user-select:none; /*用户不能选中文本,Firefox*/
+	-ms-user-select:none; /*用户不能选中文本*/
+	user-select:none; /*用户不能选中文本*/
+}
+
+17、CSS省略号
+div{
+	width:200px;
+	white-space:nowrap;/*设置不折行*/
+	text-overflow:ellipsls; /*当对象内文本溢出时显示省略标记*/
+	-o-text-overflow:ellipsls; /*Opera*/
+	overflow:hidden; /*将超出的部分设置为隐藏*/
+}
+
+18、CSS3斑马条纹
+tbody tr:nth-child(odd){
+	background-color:#ccc;
+}/*odd为偶数行*/
+
+19、给浏览器的滚动条加上颜色
+body{
+	scrollbar-face-color:#6666666;/*滚动条颜色*/
+	scrollbar-shadow-color:#FFFFFF; /*滚动条阴影的颜色*/
+	scrollbar-highlight-color:#FFFFFF;/*滚动条高光颜色*/
+	scrollbar-3dlight-color:#3366cc;/*滚动条3D颜色*/
+	scrollbar-darkshadow-color:#666666;/*滚动条深阴影的颜色*/
+	scrollbar-track-color:#EEEEEE;/*滚动条背景的颜色*/
+	scrollbar-arrow-color:#666666;/*滚动条箭头的颜色*/
+}
+
+20、文本动画
+@keyframes:规定动画
+animation:所有动画属性的简写属性，除了 animation-play-state 属性。
+animation-name:规定@keyframes动画名称。
+animation-duration:规定动画完成一个周期所花费的秒或毫秒，默认为0。
+animation-timing-function:规定动画的速度曲线，默认是ease。
+animation-delay:规定动画何时开始，默认是0。
+animation-iteration-count:规定动画播放次数，默认为1。
+animation-direction:规定动画是否在下一周期逆向播放，默认是“normal”。
+animation-play-state:规定动画是否正在运行或暂停，默认是“running”。
+animation-fill-mode:规定对象动画时间之外的状态。
+
+例子：
+div{
+	animation-name: myfirst;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;	
+}
+@keyframes myfirst
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+
+21、文字阴影
+text-shadow:5px 5px 5px #6600ff;
+/*第一个参数为水平阴影的位置，必须要写
+  第二个参数为垂直阴影的位置，必须要写
+  第三个参数为模糊距离，可以不写
+  第四个参数为阴影颜色，可以不写*/
+
+22、文字水平居中
+.container{
+	text-align:center;
+}
+
+23、文字垂直居中
+.container{
+	height:35px;
+	line-height:35px;
+}
+
+24、让子元素相对父元素垂直居中
+<div id="big">
+	<div id="small"></div>
+</div>
+#big{
+	position:relative;
+	height:480px;
+}
+#samll{
+	position:absolute;
+	top:50%;
+	height:240px;
+	margin-top:-120px;
+}
+
+25、图片宽度和高度自适应div
+<div class="img">
+	<img src="12.jpg">
+</div>
+
+.img{
+	width: 300px;
+	height: 300px;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+
+26、简单3D按钮
+#button{
+	background:#888;
+	border:1px solid;
+	color:#999 #777 #777 #999;
+}
+
+27、用图片美化列表标志
+ul{
+	list-style:none;
+}
+ul li{
+	background-image:url("path-to-your-image");
+	background-repeat:none;
+	background-position:0 0.5em;
+}
+
+28、用CSS画三角形：参照http://www.jb51.net/article/42513.htm
+
+29、禁止自动换行
+h1{
+	white-space:nowrap;
+}
+/*white-space参数：
+  1、normal : 　默认处理方式
+  2、nowrap : 　强制在同一行内显示所有文本，直到文本结束或者遭遇br标签对象才换行。
+  注：DIVCSS5推荐使用white-space:nowrap强制不换行。*/
+
+30、使用图片替换<h1>标签的元素又不影响SEO
+h1{
+	text-indent:-9999px;
+	background:url("h1-images.jpg") repeat;
+	width:200px;
+	height:50px;
+}
